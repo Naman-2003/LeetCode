@@ -1,0 +1,274 @@
+// COLLECTIONS  --
+
+
+
+//public class Collection {
+//    public static void main(String[] args) {
+////        ArrayList<String> st =  new ArrayList<>();
+////        st.add("NAMAN");
+////        System.out.println(st);
+//
+//        List<Integer> ls = new ArrayList<>();
+//        ls.add(1);
+//        ls.add(2);
+//        ls.add(3);
+//        ls.add(4);
+//        System.out.println(ls);
+//        ls.remove(1);
+//        System.out.println(ls);
+//
+//        ls.add(1,45);
+//        System.out.println(ls);
+//
+//        List new_ls =  new ArrayList();   -- >> it can also change by LinkList there will be no change .
+//        new_ls.add(150);
+//        new_ls.add(4540);
+//        ls.addAll(new_ls);
+//        System.out.println(ls);
+//        System.out.println(ls.get(2));
+//        ls.remove(3);
+//        System.out.println(ls);
+//        System.out.println(ls.remove(Integer.valueOf(150)));
+//        System.out.println(ls);
+////        ls.clear();
+////        System.out.println(ls);
+//        ls.set(2,45677);
+//        System.out.println(ls);
+//        System.out.println(ls.contains(45677));
+//
+//        for (int i =0; i< ls.size();i++){
+//            System.out.println("List elements are: "+ls.get(i));
+//        }
+//       for (Integer element: ls){
+//           System.out.println("LIST ARE: "+ element);
+//       }
+//
+//        Iterator<Integer> newlist  =  ls.iterator();
+//       while (newlist.hasNext()){
+//           System.out.println("Iterator"+ newlist.next());
+//       }
+//
+//    }
+//}
+
+
+
+  // STACK --
+
+
+//public class Collection {
+//    public static void main(String[] args) {
+//        Stack<String>  animal  =  new Stack<>();
+//        animal.push("LION");
+//        animal.push("CAT");
+//        animal.push("COW");
+//        animal.push("MONKEY");
+//        animal.push("HORSE");
+//
+//        System.out.println("STACK: "+ animal);
+//        System.out.println(animal.peek());
+//        animal.pop();
+//        System.out.println(animal.pop());
+//    }
+//}
+
+
+
+
+//QUEUE --
+
+
+//public  class Collection {
+//    public static void main(String[] args) {
+//        Queue<Integer> qu =  new LinkedList<>();
+//        qu.offer(1);
+//        qu.offer(2);
+//        qu.offer(3);
+//        qu.offer(4);
+//        qu.offer(5);
+//
+//        System.out.println(qu);
+//        System.out.println(qu.poll());
+//        System.out.println(qu);
+//        System.out.println(qu.peek());
+//    }
+//}
+
+
+
+// PRIORITY QUEUE --
+
+
+//public class Collection {
+//    public static void main(String[] args) {
+//        Queue<Integer> queue = new PriorityQueue<>(Comparator.reverseOrder());
+//        queue.offer(1);
+//        queue.offer(2);
+//        queue.offer(3);
+//        queue.offer(4);
+//        queue.offer(5);
+//        System.out.println(queue);
+//        queue.poll();
+//        System.out.println(queue.poll());
+//        queue.peek();
+//        System.out.println(queue.peek());
+//    }
+//}
+
+
+
+
+// ARRAYDEQUE --
+
+
+
+//public class Collection {
+//    public static void main(String[] args) {
+//        ArrayDeque<Integer> adq =  new ArrayDeque<>();
+//        adq.offer(1);
+//        adq.offer(2);
+//        adq.offer(3);
+//        adq.offer(4);
+//        adq.offer(5);
+//
+//        System.out.println(adq);
+//
+//
+//        // peek --
+//
+//        adq.peek();
+//        System.out.println(adq.peek());
+//        System.out.println(adq.peekFirst());
+//        System.out.println(adq.peekLast());
+//
+//        //poll --
+//
+//        adq.poll();
+//        System.out.println(adq.poll());
+//        System.out.println(adq.pollFirst());
+//        System.out.println(adq.pollLast());
+//
+//
+//        // check total elemens now  --
+//        System.out.println(adq);
+//    }
+//}
+
+
+
+//    HASHSET  -- >> they are usually unordered      **  REMEMBER -->>   SET DON'T ALLOW DUPLICATE VALUE
+
+//public  class Collection {
+//    public static void main(String[] args) {
+//        Set<Integer>  set =  new HashSet<>();
+//        set.add(1);
+//        set.add(2);
+//        set.add(3);
+//        set.add(4);
+//        set.add(5);
+//
+//        System.out.println(set);
+//
+//        set.remove(4);
+//        System.out.println(set);
+//        set.isEmpty();
+//        System.out.println(set.contains(4));
+//        System.out.println(set.size());
+//        set.clear();
+//        System.out.println(set);
+//
+//    }
+//}
+
+
+//   LINKEDHASHSET  -- >> ORDERED
+
+
+//public  class Collection {
+//    public static void main(String[] args) {
+//        Set<Integer>  set =  new LinkedHashSet<>();
+//        set.add(1);
+//        set.add(2);
+//        set.add(3);
+//        set.add(4);
+//        set.add(5);
+//
+//        System.out.println(set);
+//
+//        set.remove(4);
+//        System.out.println(set);
+//        set.isEmpty();
+//        System.out.println(set.contains(4));
+//        System.out.println(set.size());
+//        set.clear();
+//        System.out.println(set);
+//
+//    }
+//}
+
+
+
+//  TREESET -- >> they are in sorted order and  they are unique  >>  (don't allow duplicates) .
+
+
+
+//public  class Collection {
+//    public static void main(String[] args) {
+//        Set<Integer>  set =  new TreeSet<>();
+//        set.add(1);
+//        set.add(34);
+//        set.add(2);
+//        set.add(22);
+//        set.add(3);
+//        set.add(2456);
+//        set.add(4);
+//        set.add(2244);
+//        set.add(5);
+//
+//        System.out.println(set);
+//
+//        set.remove(4);
+//        System.out.println(set);
+//        set.isEmpty();
+//        System.out.println(set.contains(4));
+//        System.out.println(set.size());
+//        set.clear();
+//        System.out.println(set);
+//
+//    }
+//}
+
+
+// MAP ---
+
+//
+//import java.util.HashMap;
+//import java.util.Map;
+//
+//public  class Collection {
+//    public static void main(String[] args) {
+//
+//
+//        Map<Integer, String>  map =  new HashMap<>();
+//
+//        map.put(1,"A");
+//        map.put(2,"B");
+//        map.put(3,"c");
+//        map.put(4,"d");
+//        map.put(5,"e");
+//        map.put(6,"f");
+//        map.put(6,"f");
+//
+//        System.out.println(map);
+//        map.putIfAbsent(4,"e");
+//        System.out.println(map);
+//
+//        for (Map.Entry<Integer,String>e:map.entrySet())
+//        {
+//            System.out.println("e will be: "+e);
+//            System.out.println("key is: " + e.getKey());
+//            System.out.println("value is: "+e.getValue());
+//        }
+//
+//    }
+//}z
