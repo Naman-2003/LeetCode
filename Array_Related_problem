@@ -1,0 +1,657 @@
+/*import java.util.*;
+
+public class Hashing {
+    public static void main(String[] args) {
+        System.out.println("ENTER THE SIZE OF ARRAY: ");
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            System.out.println("ENTER Element " + (i + 1) + ": ");
+            arr[i] = sc.nextInt();
+        }
+
+        Frequency(arr, size);
+    }
+
+    public static void Frequency(int arr[], int n) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            if (map.containsKey(arr[i])) {
+                map.put(arr[i], map.get(arr[i]) + 1);
+            } else {
+                map.put(arr[i], 1);
+            }
+        }
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+}
+ */
+
+
+/*
+import java.util.*;
+
+public class Hashing {
+
+    public static void main(String args[]) {
+
+        int arr[] = {10, 0, 10, 15, 10, 15};
+        int n = arr.length;
+        Frequency(arr, n);
+    }
+    static void Frequency(int arr[], int n) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            if (map.containsKey(arr[i])) {
+                map.put(arr[i], map.get(arr[i]) + 1);
+            } else {
+                map.put(arr[i], 1);
+            }
+        }
+
+        int maxFreq = 0, minFreq = n;
+        int maxEle = 0, minEle = 0;
+        // Traverse through map and find the elements
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int count = entry.getValue();
+            int element = entry.getKey();
+
+            if (count > maxFreq) {
+                maxEle = element;
+                maxFreq = count;
+            }
+            if (count < minFreq) {
+                minEle = element;
+                minFreq = count;
+            }
+        }
+
+        System.out.println("The highest frequency element is: " + maxEle);
+        System.out.println("The lowest frequency element is: " + minEle);
+    }
+}
+*/
+
+
+// ARRAY - LARGEST - BRUTE FORCE METHOD
+/*
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ARRAY {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // SIZE OF ARRAY
+        System.out.println("ENTER THE SIZE OF ARRAY");
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        // INPUT FOR ARRAY
+        System.out.println("Enter elements for the array:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // OUTPUT THE LARGEST VALUE OF ARRAY
+        System.out.println("THE LARGEST VALUE OF ARRAY IS: " + sort(arr));
+    }
+
+    static int sort(int arr[]) {
+        Arrays.sort(arr);
+        return arr[arr.length - 1];
+    }
+}
+ */
+
+// ARRAY - LARGEST - OPTIMAL METHOD
+/*
+import java.util.*;
+
+public class ARRAY {
+    public static void main(String[] args) {
+        System.out.println("ENTER THE SIZE OF ARRAY: ");
+        Scanner sc  = new Scanner(System.in);
+        int size  = sc.nextInt();
+        int arr[] = new int[size];
+
+        // FOR INPUT -
+        System.out.println("ENTER THE VALUE OF ARRAY: ");
+        for (int i = 0;i<size;i++){
+            arr[i]= sc.nextInt();
+        }
+
+        System.out.println("GREATEST VALUE OF ARRAY IS: " + sorted(arr));
+    }
+
+    static int sorted(int arr[]){
+        int max =  arr[0];
+        for (int i =0;i< arr.length;i++){
+            if (max<arr[i]){
+                max = arr[i];
+            }
+          }
+        return  max;
+}
+}
+ */
+
+
+// SECOND LARGEST -- brute force
+/*
+import java.util.*;
+
+
+public class ARRAY {
+    public static void main(String[] args) {
+        System.out.println("ENTER THE SIZE OF ARRAY : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Sort the array in descending order
+        Arrays.sort(arr);
+        // Reverse the sorted array to get it in descending order
+        reverseArray(arr);
+
+        // Output the second greatest value
+        System.out.println("SECOND GREATEST VALUE IS: " + arr[1]);
+    }
+
+    // Function to reverse the array
+    static void reverseArray(int arr[]) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            // Swap elements at start and end
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            // Move the pointers towards the center
+            start++;
+            end--;
+        }
+    }
+}
+ */
+
+
+// better method - -
+/*
+import  java.util.*;
+public class ARRAY {
+
+    static private void getElement(int arr[], int n){
+        if (n == 0 || n == 1){
+            System.out.println("-1");
+        }
+        int small  = Integer.MAX_VALUE;
+        int sec_small =  Integer.MAX_VALUE;
+        int largest =  Integer.MIN_VALUE;
+        int sec_largest =Integer.MIN_VALUE;
+        int i;
+        for (i = 0;i<n;i++){
+            small = Math.min(small,arr[i]);
+            largest =  Math.max(largest,arr[i]);
+        }
+
+        for (i = 0;i<n;i++){
+            if (arr[i]> sec_largest && arr[i] != largest){
+                sec_largest = arr[i];
+            }
+            if (arr[i]< sec_small && arr[i] != small)
+            {
+                sec_small = arr[i];
+            }
+        }
+        System.out.println("SECOND LARGEST IS: "+ sec_largest +  "\n"  + "SECOND SMALLEST IS: "+sec_small);
+    }
+    public static void main(String[] args) {
+        System.out.println("ENTER THE VALUE OF ARRAY: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        System.out.println("ENTER THE VALUE FOR ARRAY: ");
+        for (int i = 0; i < n; i++) {
+            arr [i] = sc.nextInt();
+        }
+
+        getElement(arr, n);
+    }
+}
+
+ */
+
+
+// OPTIMAL METHOD --
+/*
+import java.util.Scanner;
+
+public class ARRAY {
+
+    static private int SecondSmall(int arr[], int n) {
+        if (n < 2) {
+            return -1;
+        }
+        int small = Integer.MAX_VALUE;
+        int sec_small = Integer.MAX_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < small) {
+                sec_small = small;
+                small = arr[i];
+            } else if (arr[i] < sec_small && arr[i] != small) {
+                sec_small = arr[i];
+            }
+        }
+        return sec_small;
+    }
+
+    static private int SecondLargest(int arr[], int n) {
+        if (n < 2) {
+            return -1;
+        }
+        int largest = Integer.MIN_VALUE;
+        int sec_largest = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > largest) {
+                sec_largest = largest;
+                largest = arr[i];
+            } else if (arr[i] > sec_largest && arr[i] != largest) {
+                sec_largest = arr[i];
+            }
+        }
+        return sec_largest;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("ENTER THE VALUE OF ARRAY: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        System.out.println("ENTER THE VALUE FOR ARRAY: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int lL = SecondLargest(arr, n);
+        int sS = SecondSmall(arr, n);
+
+        System.out.println("SECOND LARGEST IS: " + lL + "\n" + "SECOND SMALLEST IS: " + sS);
+    }
+}
+ */
+
+// CHECK SORTED  --
+/*
+import java.util.*;
+
+public class ARRAY {
+
+    static boolean isSorted(int arr[], int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j =i+1;j<n;j++){
+                if (arr[i]>arr[j])
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("ENTER THE SIZE: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        // INPUT
+        System.out.println("ENTER VALUE OF ARRAY: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("IS SORTED: " + isSorted(arr, n));
+    }
+}
+ */
+
+
+
+// SORTED OR NOT (ARRAY) --
+/*
+import java.util.*;
+public class ARRAY {
+
+    static  boolean isSorted(int arr[] , int  n)
+    {
+        for (int i = 1;i<n;i++)
+        {
+            if (arr[i]<arr[i-1])
+                return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        System.out.println("ENTER THE SIZE OF ARRAY: ");
+        Scanner sc  = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        // INPUT
+        System.out.println("ENTER VALUE OF ARRAY: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("IS SORTED: " + isSorted(arr, n));
+    }
+}
+ */
+
+/*
+import java.util.*;
+public class ARRAY {
+
+    static int  removeDuplicate(int arr[] , int n){
+       HashSet<Integer> set  =  new HashSet<>();
+       for (int i =0;i< arr.length;i++)
+       {
+           set.add(arr[i]);
+       }
+       int k = set.size();
+       int j =0;
+       for (int x:set)
+       {
+           arr[j++] = x;
+       }
+       return k;
+    }
+    public static void main(String[] args) {
+        System.out.println("ENTER THE SIZE OF ARRAY: ");
+        Scanner sc  = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        // INPUT
+        System.out.println("ENTER VALUE OF ARRAY: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("DUPLICATE VALUE : " + removeDuplicate(arr, n));
+    }
+}
+ */
+
+
+/*
+public class ARRAY {
+
+    static int removeDuplicate(int[] arr){
+        int i =0;
+        for (int j =1; j<arr.length;j++){
+            if (arr[i] != arr[j])
+            {
+                i++;
+                arr[i] = arr[j];
+            }
+        }
+        return  i+1;
+    }
+    public static void main(String[] args) {
+        int arr[] = {1,1,1,2,2,2,3,3,3,4,4,4,5,5,};
+        int k   =  removeDuplicate(arr);
+        System.out.println("array after remving dupliuacet");
+        for (int i=0;i<k;i++){
+            System.out.println(arr[i]+" ");
+        }
+    }
+}
+
+ */
+
+/*
+import java.util.*;
+public class ARRAY {
+
+    public static void rotate(int[] arr, int n){
+        int temp[]  =  new int[n];
+        for (int i  =1;i<n;i++){
+           temp[i-1] = arr[i];
+        }
+        temp[n-1] = arr[0];
+        for (int i=0;i<n;i++){
+            System.out.println("LEFT ROTATE VALUE OF ARRAY BY ONE : "+ temp[i]);
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println("ENTER ARRAY SIZE: ");
+        Scanner sc  = new Scanner(System.in);
+        int n  = sc.nextInt();
+        int arr[] =  new  int[n];
+
+        // INPUT FOR ARRAY
+         System.out.println("ENTER THE VALUE OF ARRAY: ");
+        for (int i =0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        rotate(arr, n);
+    }
+}
+
+ */
+
+
+/*
+import java.util.*;
+public class ARRAY {
+
+    public static void rotate(int[] arr, int n){
+       int temp = arr[0];
+        for (int i  =0;i<n-1;i++){
+           arr[i] =arr[i+1];
+        }
+        arr[n-1] = temp;
+        for (int i=0;i<n;i++){
+            System.out.println("LEFT ROTATE VALUE OF ARRAY BY ONE : "+ arr[i]);
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println("ENTER ARRAY SIZE: ");
+        Scanner sc  = new Scanner(System.in);
+        int n  = sc.nextInt();
+        int arr[] =  new  int[n];
+
+        // INPUT FOR ARRAY
+        System.out.println("ENTER THE VALUE OF ARRAY: ");
+        for (int i =0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        rotate(arr, n);
+    }
+}
+ */
+
+
+// ROTATE AN ARRAY BY K ELEMENTS - -
+
+
+/*
+import java.util.*;
+
+public class ARRAY {
+
+    public static void RotateArray(int arr[] , int n , int k){
+        if (n==0)return;
+        if (k>n)return;
+        k = k%n;
+        int[] temp = new int[k];
+        for (int i=n-k;i<n;i++)
+        {
+            temp[i-n+k] = arr[i];
+        }
+        for (int i  = n-k-1;i>=0;i--)
+        {
+           arr[i+k]  = arr[i];
+        }
+        for (int i =0;i<k;i++){
+            arr[i] =  temp[i];
+        }
+    }
+    public static void main(String[] args) {
+        int n =7;
+        int[] arr ={1,2,3,4,5,6,7};
+        int k =2;
+        RotateArray(arr,n,k);
+        System.out.println("ARRAY ELEMNETS ARE: ");
+        for (int i =0;i<n;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+
+ */
+
+// REPLACE ZERO AT END --
+
+
+/*import java.util.*;
+
+public class ARRAY {
+
+    public static  int[] MoveZero(int arr[] ,  int n){
+        ArrayList<Integer> temp =  new ArrayList<>();
+
+        for (int i =0;i<n;i++){
+            if (arr[i] != 0){
+                temp.add(arr[i]);
+            }
+        }
+        int nz  = temp.size();
+        int a[] = new int[n];
+
+        for (int i =0; i<nz;i++){
+            a[i] = temp.get(i);
+        }
+        for (int i = nz; i < n; i++) {
+            a[i] = 0;
+        }
+  return  a;
+    }
+    public static void main(String[] args) {
+        int n = 7;
+        int [] arr = {1,3,0,5,0,7,8};
+        int ans[]  =  MoveZero(arr, n);
+        for (int i =0;i<n;i++){
+            System.out.println("VALUE IS: "+ans[i]+" ");
+        }
+
+    }
+}
+ */
+
+
+/*import java.util.*;
+public class ARRAY {
+
+    public static int[] ReplaceZero(int arr[] , int n){
+        int j = -1;
+
+        for (int i =0;i<n;i++) {
+            if (arr[i] == 0) {
+                j = i;
+                break;
+            }
+        }
+        if (j == -1) return  arr;
+        for (int i = j+1;i<n;i++)
+        {
+            if (arr[i] != 0)
+            {
+                int temp  = arr [i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                j++;
+            }
+        }
+        return arr;
+
+    }
+    public static void main(String[] args) {
+        int n  =7;
+        int [] arr ={1,0,2,0,3,0,4};
+        int[] ans =  ReplaceZero(arr, n);
+        for (int i =0;i<n;i++)
+            System.out.print(+ ans[i]+" ");
+    }
+}
+ */
+
+
+
+// Union of Two Sorted Arrays --
+
+
+/*
+import java.util.*;
+public class ARRAY {
+
+    public static ArrayList<Integer> Findunion(int arr1[] , int arr2[] , int a, int b){
+        HashSet<Integer>  s = new HashSet<>();
+        ArrayList<Integer> Union  = new ArrayList<>();
+        for (int i = 0; i < a; i++)
+            s.add(arr1[i]);
+        for (int i = 0; i < b; i++)
+            s.add(arr2[i]);
+        for (int it: s)
+            Union.add(it);
+        return Union;
+    }
+    public static void main(String[] args) {
+        int a = 10;
+        int b =  7;
+
+        int[] arr1 ={1,2,3,4,5,6,7,8,9,10};
+        int[] arr2 ={2,4,6,8,10,12,14,15};
+
+        ArrayList<Integer> Union  = Findunion(arr1, arr2,a,b);
+        System.out.println("ELEMENTS ARE: ");
+        for (int val: Union)
+            System.out.print(val+" ");
+    }
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
