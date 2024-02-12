@@ -1,0 +1,71 @@
+public class Solution {
+    public static int count(int arr[], int n, int x) {
+        int firstIndex = findFirstIndex(arr, n, x);
+        
+        // If the element doesn't exist, return 0
+        if (firstIndex == -1) {
+            return 0;
+        }
+        
+        // Find the last occurrence of x
+        int lastIndex = findLastIndex(arr, n, x);
+        
+        // Calculate the count of occurrences
+        return lastIndex - firstIndex + 1;
+    }
+    
+    // Binary search to find the first occurrence of x
+    private static int findFirstIndex(int arr[], int n, int x) {
+        int low = 0;
+        int high = n - 1;
+        int firstIndex = -1;
+        
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            
+            if (arr[mid] >= x) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+            
+            if (arr[mid] == x) {
+                firstIndex = mid;
+            }
+        }
+        
+        return firstIndex;
+    }
+    
+    // Binary search to find the last occurrence of x
+    private static int findLastIndex(int arr[], int n, int x) {
+        int low = 0;
+        int high = n - 1;
+        int lastIndex = -1;
+        
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            
+            if (arr[mid] <= x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+            
+            if (arr[mid] == x) {
+                lastIndex = mid;
+            }
+        }
+        
+        return lastIndex;
+    }
+    
+    public static void main(String[] args) {
+        int arr[] = {2, 2, 3, 3, 3, 3, 4};
+        int n = arr.length;
+        int x = 3;
+        
+        int ans = count(arr, n, x);
+        System.out.println(ans); // Output should be 4
+    }
+}
