@@ -1,1 +1,1 @@
-# LeetCode
+# Solving LeetCode & Coding Ninja
