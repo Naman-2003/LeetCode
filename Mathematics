@@ -1,0 +1,126 @@
+import  java.util.*;
+
+//  COUNT DIGIT - -
+
+
+//public class Maths {
+//    public static void main(String[] args) {
+//        System.out.println("Enter the value: ");
+//        Scanner X = new Scanner(System.in);
+//        int n  = X.nextInt();
+//
+//        int count  = 0;
+//        while (n>0){
+//            n  =  n  /10;
+//            count += 1;
+//        }
+//        System.out.println(count);
+//    }
+//}
+
+
+//  REVERSE ORDER - -
+
+
+//public  class Maths {
+//
+//    public static void main(String[] args) {
+//        System.out.println("ENTER THE VALUE: ");
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int digit = 0;
+//        int rev = 0;
+//        while (n != 0) {
+//            digit = n % 10;
+//            rev = (rev * 10) + digit;
+//            n = n / 10;
+//        }
+//        System.out.println("THE REVERSE ORDER IS : "+rev);
+//    }
+//}
+
+
+
+
+//  CHECK PALINDROME  --
+
+
+
+//public  class Maths {
+//    public static void main(String[] args) {
+//        System.out.println("Enter the value: ");
+//        Scanner sc  =  new Scanner(System.in);
+//        int n  =  sc.nextInt();
+//        int digit = 0;
+//        int rev  =0;
+//        while (n!= 0) {
+//            digit = n % 10;
+//            rev = (rev * 10) + digit;
+//            n = n / 10;
+//        }
+//        System.out.println(rev);
+//        if (n == rev) System.out.println("PALINDROME");
+//        else System.out.println("NOT PALINDROME");
+//
+//    }
+//}
+
+
+
+//  ARMSTRONG NO .  --
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+//public class Maths {
+//    public static void main(String[] args) {
+//        System.out.println("ENTER THE VALUE: ");
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int x = n;
+//
+//        int sum = 0;
+//        int digit;
+//
+//        while (n > 0) {
+//            digit = n % 10;
+//
+//         //     sum += digit*digit*digit;
+//
+//            sum += Math.pow(digit, 3);  // Using Math.pow to calculate the cube
+//            n = n / 10;
+//        }
+//
+//        if (x == sum) {
+//            System.out.println("ARMSTRONG");
+//        } else {
+//            System.out.println("NOT ARMSTRONG");
+//        }
+//    }
+//}
+
+//public  class Maths {
+//    public static void main(String[] args) {
+//        System.out.println("ENTER THE VALUE: ");
+//        Scanner sc  = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        for (int i = 1;i<n;i++) {
+//            if (n % i == 0) System.out.println("Prime" + i);
+//        }
+//
+//    }
+//}
+
+
+
+
+
+
+
+ 
