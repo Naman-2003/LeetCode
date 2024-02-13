@@ -2,7 +2,9 @@ public class Solution {
     public static int findKRotation(int[] arr) {
         int low = 0;
         int high = arr.length - 1;
-        int ans = Integer.MAX_VALUE; // TO FIND THE MINIMUM FROM THE ARRAY
+
+// TO FIND THE MINIMUM FROM THE ARRAY
+        int ans = Integer.MAX_VALUE; 
         int index = -1;
 
         while (low <= high) {
